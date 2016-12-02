@@ -1,0 +1,35 @@
+<md-content class="tab-content md-padding">
+    <md-input-container>
+        <label>New Playlist</label>
+        <input ng-model="playlistCtrl.newPlaylistName" type="text" placeholder="Enter playlist name" ng-keypress="playlistCtrl.addNew($event)">
+    </md-input-container>
+
+    <ul class="upnext-list">
+
+        <li class="upnext-list-item" layout="row" layout-align="start start" ng-click="playlistCtrl.selectPlaylist(-1)">
+            <div flex class="item-left">
+                <i class="icon ion-ios-star"></i>
+            </div>
+            <div flex class="item-content">
+                Starred
+            </div>
+            <div flex class="item-hover">
+                <i class="fa fa-play" ng-click="playlistCtrl.playAll($event, $index)"></i>
+                <i class="fa fa-trash-o" ng-click="playlistCtrl.remove($event, $index)"></i>
+            </div>
+        </li>
+
+        <li class="upnext-list-item" layout="row" layout-align="start start" ng-repeat="playlist in playlistCtrl.playlists.items track by $index" ng-click="playlistCtrl.selectPlaylist($index)">
+            <div flex class="item-left">
+                <i class="icon ion-ios-musical-notes"></i>
+            </div>
+            <div flex class="item-content">
+                {{playlist.name}}
+            </div>
+            <div flex class="item-hover">
+                <i class="fa fa-play" ng-click="playlistCtrl.playAll($event, $index)"></i>
+                <i class="fa fa-trash-o" ng-click="playlistCtrl.remove($event, $index)"></i>
+            </div>
+        </li>
+    </ul>
+</md-content>

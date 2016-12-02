@@ -1,0 +1,19 @@
+<md-content class="list-hover tab-content md-padding">
+    <ul id="charts" class="upnext-list">
+        <li class="upnext-list-item" layout="row" layout-align="start start" ng-click="chartsCtrl.selectReddit()">
+            <div flex="90" class="item-content">
+                Reddit Hot
+            </div>
+            <div flex class="item-right">
+                <i class="icon ion-social-reddit-outline"></i>
+            </div>
+        </li>
+
+        <li class="upnext-list-item" layout="row" layout-align="start start" ng-repeat="cat in chartsCtrl.categories" ng-click="chartsCtrl.selectCategory(cat)">
+            <div flex class="item-content">
+                {{chartsCtrl.sanitizeCategory(cat)}}
+            </div>
+        </li>
+
+    </ul>
+</md-content>

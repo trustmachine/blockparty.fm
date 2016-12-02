@@ -1,0 +1,16 @@
+<div ui-view></div>
+<md-toolbar class="bottom-toolbar">
+    <div class="md-toolbar-tools">
+        <span flex>
+            <md-button ng-click="chartsCtrl.playAll()" ng-show="'charts.detail' | isState">
+                <i class="fa fa-play"></i>
+                &nbsp;{{'button_playAll' | translate}}
+            </md-button>
+        </span>
+        <span flex></span>
+        <span><md-progress-circular class="md-primary" md-mode="indeterminate" md-diameter="14" ng-show="syncing"></md-progress-circular></span
+        <span>
+        	<configuration></configuration>
+        </span>
+    </div>
+</md-toolbar>
